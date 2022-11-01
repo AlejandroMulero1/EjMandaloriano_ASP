@@ -1,0 +1,21 @@
+﻿
+@model EjMandaloriano_ASP_MVC.Models.MisionViewModel
+
+
+
+
+<h1>Misiones:</h1>
+<form asp-controller="Home" asp-action="Index" method="post">
+    <div>
+    <select class="form-select" asp-items="Model.misionSelectList" asp-for="IdMision">
+        <option>Seleccione la mision deseada</option>
+        </select>
+    </div>
+    <div>
+        <button type="submit">Ver detalles</button>
+    </div>
+</form>
+
+
+
+
