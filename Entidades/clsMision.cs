@@ -5,6 +5,7 @@
         public clsMision() { 
         
         }
+
         public clsMision(String id, String nombreMision, String descripcion, int recompensa) {
             Id = id;
             NombreMision = nombreMision;
