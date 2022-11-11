@@ -5,7 +5,7 @@
              x:Class="EjMandaloriano_MAUI_MVVM.MainPage">
 
     <ContentPage.BindingContext>
-        <model:clsListadoMisionesVM></model:clsListadoMisionesVM>
+        <model:clsMainPageVM></model:clsMainPageVM>
     </ContentPage.BindingContext>
 
     <ScrollView>
@@ -14,13 +14,29 @@
             Padding="30,0"
             VerticalOptions="Center">
 
-            <Label/>
-            <Picker>
-                
-            </Picker>
+            <ListView x:Name="lstListaMisiones"
+                      ItemsSource="{Binding ListadoMisiones}"
+                      SelectedItem="{Binding MisionSeleccionada}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding NombreMision}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 
-            <Label/>
-            <Label/>
+            <Button x:Name="btnMostraDetallesMision"
+                    Command="{Binding MostrarDetallesCommand}"/>
+
+            <VerticalStackLayout IsVisible="{Binding DatosMisionEsVisible}">
+                <Label x:Name="lblNombreMision" Text="{Binding MisionSeleccionada.NombreMision}"/>
+                <Label x:Name="lblDescripcionMision" Text="{Binding MisionSeleccionada.Descripcion}"/>
+                <Label x:Name="lblRecompensaMision" Text="{Binding MisionSeleccionada.Recompensa}"
+                       />
+            </VerticalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
 
