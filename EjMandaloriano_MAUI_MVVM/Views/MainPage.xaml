@@ -15,7 +15,7 @@
             VerticalOptions="Center">
 
             <ListView x:Name="lstListaMisiones"
-                      ItemsSource="{Binding ListadoMisiones}"
+                      ItemsSource="{Binding ListaMisiones}"
                       SelectedItem="{Binding MisionSeleccionada}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -29,7 +29,7 @@
             </ListView>
 
             <Button x:Name="btnMostraDetallesMision"
-                    Command="{Binding MostrarDetallesCommand}"/>
+                    Command="{Binding MostrarDetallesCommand}" Text="Ver detalles"/>
 
             <VerticalStackLayout IsVisible="{Binding DatosMisionEsVisible}">
                 <Label x:Name="lblNombreMision" Text="{Binding MisionSeleccionada.NombreMision}"/>

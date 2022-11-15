@@ -17,7 +17,16 @@ namespace EjMandalorianoBL
     {
         public static List<clsMision> obtenerListaMisiones()
         {
-            return clsListaMisiones.obtenerListaMisiones();
+            List<clsMision> mision;
+            if (DateTime.Now.DayOfWeek == DayOfWeek.Sunday)
+            {
+                mision = null;
+            }
+            else { 
+            mision= clsListaMisiones.obtenerListaMisiones();
+            }
+
+            return mision;
         }
     }
 }
